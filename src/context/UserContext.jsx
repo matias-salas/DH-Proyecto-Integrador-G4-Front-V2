@@ -21,7 +21,7 @@ const UserContextProvider = (props) => {
         email: user.email,
         name: user.name,
         lastName: user.lastName,
-        city: user.city,
+        transmission: user.transmission,
         redirect: user.redirect || false,
         role: user.role,
       })

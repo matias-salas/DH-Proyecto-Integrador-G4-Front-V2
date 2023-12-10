@@ -19,6 +19,8 @@ const Calendar = ({ inline, reserved }) => {
     dateRangeCapture(dateRange);
   });
 
+  console.log(reserved)
+
   const dateBooking = reserved?.map((booking) => {
     return {
       start: new Date(booking.check_in_date),
@@ -26,7 +28,7 @@ const Calendar = ({ inline, reserved }) => {
     };
   });
 
-  // console.log(dateBooking);
+  console.log(dateBooking);
 
   return (
     <DatePicker

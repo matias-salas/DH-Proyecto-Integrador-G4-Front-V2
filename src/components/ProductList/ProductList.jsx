@@ -5,9 +5,18 @@ import style from './ProductList.module.css';
 
 const ProductList = ({ products, isLoading }) => {
   //console.log(products);
+
+  // sort products by  average_score
+  console.log(products);
+
+  products.sort((a, b) => {
+    return b.average_score - a.average_score;
+  }
+  );
+  
   return (
     <div className={style.container}>
-      <h2 className={style.recommendations}>Recomendaciones</h2>
+      {/* <h2 className={style.recommendations}>Recomendaciones</h2> */}
       {isLoading ? (
         <div style={{ alignSelf: 'center' }}>
           <Spinner style={{ alignSelf: 'center' }} />
@@ -27,7 +36,7 @@ const ProductList = ({ products, isLoading }) => {
                 category={product.category}
                 title={product.name}
                 description={product.description}
-                location={product.city}
+                location={product.transmission}
                 address={product.address}
                 attributes={product.attributes}
                 latitude={product.latitude}

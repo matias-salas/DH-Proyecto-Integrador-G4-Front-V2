@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import style from './ProductDetail.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faGear } from '@fortawesome/free-solid-svg-icons';
 import ImageGallery from '../ImageGallery/ImageGallery';
 import Modal from '../Modal/Modal';
 import Calendar from '../Search/Calendar/Calendar';
@@ -18,7 +18,7 @@ const ProductDetail = ({
   id,
   name,
   description,
-  city,
+  transmission,
   image: images,
   category,
   address,
@@ -52,10 +52,12 @@ const ProductDetail = ({
 
       <section className={style.locationScoreContainer}>
         <div className={style.locationContainer}>
-          <FontAwesomeIcon icon={faLocationDot} />
           <div className={style.location}>
-            <p>Buenos Aires, Ciudad Autonoma de Buenos Aires, Argentina.</p>
-            <p className={style.locationDistance}>{city.name}</p>
+            <FontAwesomeIcon icon={faGear} />
+
+            {/* <p>Buenos Aires, Ciudad Autonoma de Buenos Aires, Argentina.</p> */}
+            {/* <p>Transmision: </p> */}
+            <p className={style.locationDistance}>{transmission.name}</p>
           </div>
         </div>
         <div className={style.productScore}>

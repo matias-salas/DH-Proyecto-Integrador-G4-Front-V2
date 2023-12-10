@@ -29,7 +29,7 @@ const ProductListContainer = ({
       : searchCity && startDate && endDate
       ? `${baseUrl.url}/products/cityAndDates/${searchCity.id}/${startDate}/${endDate}`
       : searchCity && !(startDate && endDate)
-      ? `${baseUrl.url}/products/city/${searchCity.id}`
+      ? `${baseUrl.url}/products/transmission/${searchCity.id}`
       : startDate && endDate
       ? `${baseUrl.url}/products/dates/${startDate}/${endDate}`
       : `${baseUrl.url}/products`;
@@ -43,7 +43,7 @@ const ProductListContainer = ({
         setIsLoading(false);
       })
       .catch((err) => {
-        // if (url.includes('/city')) {
+        // if (url.includes('/transmission')) {
         //   setProducts([]);
         //   throw new Error('No hay productos disponibles en esa ciudad');
         // }

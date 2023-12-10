@@ -5,8 +5,10 @@ import SelectCity from './SelectCity/SelectCity';
 import { dateRangeContext } from '../../context/DateRangeContext';
 
 const Search = ({ handleSearch }) => {
-  const [city, setCity] = useState(null);
+  const [transmission, setCity] = useState(null);
   const { rangeDate } = useContext(dateRangeContext);
+
+  console.log(rangeDate);
 
   const getCity = (valueCity) => {
     setCity(valueCity);
@@ -14,13 +16,13 @@ const Search = ({ handleSearch }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSearch(city, rangeDate);
+    handleSearch(transmission, rangeDate);
   };
 
   return (
     <div className={style.searchContainer}>
       <h1 className={style.searchTitle}>
-        Buscar ofertas en hoteles, casas y mucho más
+        Buscá el mejor tranporte para tu viaje...
       </h1>
       <form className={style.searchForm} onSubmit={handleSubmit}>
         <SelectCity getCity={getCity} />

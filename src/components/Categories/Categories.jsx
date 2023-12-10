@@ -7,7 +7,7 @@ const Categories = ({ handleFilterCategories }) => {
   const [categories, setCategories] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  //console.log(categories);
+  console.log(categories);
 
   useEffect(() => {
     setIsLoading(true);
@@ -22,7 +22,7 @@ const Categories = ({ handleFilterCategories }) => {
 
   return (
     <div className={style.categoriesContainer}>
-      <h2>Buscar por tipo de alojamiento</h2>
+      <h2>Buscar por tipo de auto</h2>
       <div className={style.categoriesList}>
         {isLoading ? (
           <>
@@ -33,7 +33,7 @@ const Categories = ({ handleFilterCategories }) => {
           </>
         ) : (
           <>
-            {categories.slice(0, 4).map((category) => (
+            {categories.map((category) => (
               <div
                 className={style.categoryCard}
                 key={category.id}

@@ -101,7 +101,7 @@ const SignUp = () => {
         email: email.value,
         password: password.value,
         enabled: true,
-        city: { id: 1 },
+        transmission: { id: 1 },
         role: { id: 1 },
       };
       let responseClone = ''; //1

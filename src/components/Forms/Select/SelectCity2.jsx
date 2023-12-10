@@ -33,7 +33,7 @@ const SelectCity2 = ({
   };
 
   let selectText = selectedOption
-    ? `${selectedOption.name}, ${selectedOption.country.name}`
+    ? `${selectedOption.name}, ${selectedOption.fuel.name}`
     : placeholder;
 
   return (
@@ -71,11 +71,11 @@ const SelectCity2 = ({
                   {isOptionTextInTwoLines ? (
                     <>
                       <h2 className={style.title}>{option.name}</h2>
-                      <p className={style.description}>{option.country.name}</p>
+                      <p className={style.description}>{option.fuel.name}</p>
                     </>
                   ) : (
                     <p className={style.description}>
-                      {option.name}, {option.country.name}
+                      {option.name}, {option.fuel.name}
                     </p>
                   )}
                 </div>

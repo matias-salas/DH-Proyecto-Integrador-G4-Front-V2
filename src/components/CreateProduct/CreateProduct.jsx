@@ -23,7 +23,7 @@ const CreateProduct = () => {
   const [propertyName, setPropertyName] = useState({ value: '', valid: null });
   const [category, setCategory] = useState([]);
   const [address, setAddress] = useState({ value: '', valid: null });
-  const [city, setCity] = useState([]);
+  const [transmission, setCity] = useState([]);
   const [description, setDescription] = useState('');
   const [arrayImages, setArrayImages] = useState([]);
   const [arrayAttributes, setArrayAttributes] = useState([]);
@@ -41,8 +41,8 @@ const CreateProduct = () => {
 
   //console.log('newProductId', newProductId);
   //console.log('propertyName', propertyName);
-  //console.log('city', city);
-  //console.log('cityId', city?.id);
+  //console.log('transmission', transmission);
+  //console.log('cityId', transmission?.id);
   //console.log('categoryId', category?.id);
   //console.log('category', category);
   //console.log('description', description);
@@ -249,8 +249,8 @@ const CreateProduct = () => {
           longitude: '-57.5955626',
           area: '150',
           average_score: 5.0,
-          city: {
-            id: city?.id,
+          transmission: {
+            id: transmission?.id,
           },
           category: {
             id: category?.id,

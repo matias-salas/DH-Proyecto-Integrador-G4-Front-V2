@@ -38,6 +38,7 @@
   padding: 20px 10px 13px 15px;
   font-size: 14px;
   font-weight: 500;
+  justify-content: space-between;
 }
 
 .row1 {
@@ -50,11 +51,21 @@
   flex-direction: column;
   font-weight: 700;
   max-width: 70%;
+  gap: 15px;
 }
 
 .productCategoryContainer {
   display: flex;
   text-transform: uppercase;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.productCategorySubContainer{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-direction: row;
 }
 
 .productCategory {
@@ -114,8 +125,9 @@
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
-  height: 68px;
+  /* height: 68px; */
 }
+
 
 @media (min-width: 768px) {
   .cardContainer {
@@ -143,7 +155,7 @@
 
   .propertyHighlights {
     display: block;
-    font-size: 22px;
+    font-size: 18px;
     display: flex;
     align-items: flex-end;
     height: 24px;

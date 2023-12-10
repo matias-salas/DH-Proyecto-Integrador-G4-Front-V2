@@ -105,7 +105,7 @@ const SelectAttribute = () => {
                         <FontAwesomeIcon icon={fas[option?.icon]} />{' '}
                         {option?.name}
                       </h2>
-                      {/* <p className={style.description}>{option.country.name}</p> */}
+                      {/* <p className={style.description}>{option.fuel.name}</p> */}
                     </div>
                   </li>
                 ))}

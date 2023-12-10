@@ -32,7 +32,7 @@ const SelectCity = ({ getCity }) => {
   }, []);
 
   let selectText = selectedOption
-    ? `${selectedOption.name}, ${selectedOption.country.name}`
+    ? `${selectedOption.name}, ${selectedOption.fuel.name}`
     : '¿A dónde vamos?';
 
   return (
@@ -64,7 +64,7 @@ const SelectCity = ({ getCity }) => {
               <FontAwesomeIcon icon={faLocationDot} />
               <div>
                 <h2 className={style.title}>{option.name}</h2>
-                <p className={style.description}>{option.country.name}</p>
+                <p className={style.description}>{option.fuel.name}</p>
               </div>
             </li>
           ))}

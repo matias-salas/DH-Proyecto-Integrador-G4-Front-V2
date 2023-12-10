@@ -10,6 +10,8 @@ const Avatar = () => {
   const lastname = userContextResult.userInfo.lastName;
   const roleType = userContextResult.userInfo.role;
 
+  console.log(userContextResult.userInfo);
+
   return (
     <div className={style.container}>
       {roleType === 'ADMIN' && (

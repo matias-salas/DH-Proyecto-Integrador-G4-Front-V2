@@ -4,9 +4,9 @@ import style from './Product.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   fas,
-  faStar,
+  faGear,
   faHeart,
-  faLocationDot,
+  faCar,  
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 
@@ -19,6 +19,7 @@ const Product = ({
   location,
   attributes,
   averageScore,
+  address,
 }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -54,10 +55,18 @@ const Product = ({
         <div className={style.row1}>
           <div className={style.productInitialContainer}>
             <div className={style.productCategoryContainer}>
-              <p className={style.productCategory}>{category.name}</p>
-              <FontAwesomeIcon className={style.productStars} icon={faStar} />
+              <div className={style.productCategorySubContainer}>
+                <FontAwesomeIcon className={style.productStars} icon={faCar} />
+                <p className={style.productCategory}>{category.name}</p>
+              </div>
+
+              <div className={style.productCategorySubContainer}>
+                <FontAwesomeIcon className={style.productStars} icon={faGear} />
+                <p className={style.productCategory}>{location.name}</p>
+              </div>
+              
             </div>
-            <h5 className={style.productTitle}>{title}</h5>
+            <h5 className={style.productTitle}>$ {title}</h5>
           </div>
           {/* Score */}
           <div className={style.productScore}>
@@ -69,17 +78,11 @@ const Product = ({
         </div>
 
         <div className={style.productInformation}>
-          <p className={style.productLocation}>
-            <FontAwesomeIcon icon={faLocationDot} /> {location.name} -{' '}
-            <Link className={style.linkLocation} href="#a">
-              Mostrar en el mapa
-            </Link>{' '}
-          </p>
-          {/* attributes */}
           <div className={style.propertyHighlights}>
-            {attributes?.map((attribute) => (
+            {/* {attributes?.map((attribute) => (
               <FontAwesomeIcon icon={fas[attribute?.icon]} key={attribute.id} />
-            ))}
+            ))} */}
+            {address}
           </div>
         </div>
 

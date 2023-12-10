@@ -16,6 +16,11 @@
   z-index: 999;
 }
 
+.btn .btn1{
+  border: none !important;
+  background-color: transparent !important;
+}
+
 .menuTop {
   background-color: var(--primary-color);
   color: white;

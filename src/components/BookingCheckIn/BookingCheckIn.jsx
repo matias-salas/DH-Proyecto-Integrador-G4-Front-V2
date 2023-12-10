@@ -25,7 +25,7 @@ const BookingCheckIn = ({ getCheckInTime }) => {
 
   const rangeFinishTime =
     arrivalTime !== '--:--'
-      ? addHoursToDate(new Date(2022, 0, 1, arrivalTime.slice(0, 2), 0, 0), 1)
+      ? addHoursToDate(new Date(2023, 0, 1, arrivalTime.slice(0, 2), 0, 0), 1)
           .toTimeString()
           .slice(0, 5)
       : '--:--';

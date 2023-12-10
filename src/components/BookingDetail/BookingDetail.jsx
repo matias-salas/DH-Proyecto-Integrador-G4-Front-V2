@@ -117,12 +117,12 @@ const BookingDetail = ({ checkInTime }) => {
                 <h3 className={style.productTitle}>{product.name}</h3>
                 <FontAwesomeIcon className={style.productStars} icon={faStar} />
               </div>
-              {/* Address, city, country*/}
+              {/* Address, transmission, fuel*/}
               <div className={style.fullAddress}>
                 <FontAwesomeIcon icon={faLocationDot} />
                 <p>
-                  {product.address}, {product.city.name},{' '}
-                  {product.city.country.name}
+                  {product.address}, {product.transmission.name},{' '}
+                  {product.transmission.fuel.name}
                 </p>
               </div>
               {/* Check */}

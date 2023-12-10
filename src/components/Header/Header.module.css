@@ -4,8 +4,18 @@ header {
   z-index: 10;
 }
 
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logo{
+  width: 60px;
+  height: 60px;
+}
+
 .nav {
-  background-color: var(--white-color);
+  background-color: var(--fourth-color);
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -18,6 +28,7 @@ header {
 .containerLeft {
   display: flex;
   height: 56px;
+  align-items: center;
 }
 
 .motto {
@@ -36,12 +47,11 @@ header {
   }
   .motto {
     display: block;
-    font-style: italic;
     font-size: 20px;
     font-weight: 300;
-    margin-bottom: 7px;
-    margin-left: 12px;
     align-self: end;
+    margin: auto;
+    margin-left: 12px;
     color: var(--thirth-color);
   }
 }
