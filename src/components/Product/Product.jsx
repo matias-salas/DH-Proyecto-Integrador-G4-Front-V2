@@ -20,6 +20,7 @@ const Product = ({
   attributes,
   averageScore,
   address,
+  availableDates,
 }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -67,6 +68,7 @@ const Product = ({
               
             </div>
             <h5 className={style.productTitle}>$ {title}</h5>
+            {/* {availableDates} */}
           </div>
           {/* Score */}
           <div className={style.productScore}>
