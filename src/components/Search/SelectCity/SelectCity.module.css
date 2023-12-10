@@ -47,7 +47,10 @@
 .inputSearch{
   outline: none ;
   border: none ;
-  width: 380px;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
 }
 
 .description {
