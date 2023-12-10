@@ -16,7 +16,7 @@ const ProductList = ({ products, isLoading }) => {
   
   return (
     <div className={style.container}>
-      {/* <h2 className={style.recommendations}>Recomendaciones</h2> */}
+      <h2 className={style.recommendations}>Recomendaciones</h2>
       {isLoading ? (
         <div style={{ alignSelf: 'center' }}>
           <Spinner style={{ alignSelf: 'center' }} />

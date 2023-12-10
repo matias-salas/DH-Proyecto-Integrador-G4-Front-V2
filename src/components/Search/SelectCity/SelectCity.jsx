@@ -1,75 +1,50 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import style from './SelectCity.module.css';
-import baseUrl from '../../../utils/baseUrl.json';
-import useOnClickOutside from '../../../hooks/useOnClickOutside';
+import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCar } from "@fortawesome/free-solid-svg-icons";
+import style from "./SelectCity.module.css";
+import baseUrl from "../../../utils/baseUrl.json";
 
-const SelectCity = ({ getCity }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [cities, setCities] = useState([]);
-  const [selectedOption, setSelectedOption] = useState(null);
+const SelectCity = ({ enviarDato }) => {
+  const [prod, setProd] = useState([]);
+  const [busqueda, setBusqueda] = useState("");
+  const [filteredItems, setFilteredItems] = useState([]);
 
-  /* */
-  const ref = useRef();
-  useOnClickOutside(ref, () => setIsOpen(false));
-  /* */
-
-  const toggling = () => setIsOpen(!isOpen);
-
-  const onOptionClicked = (value) => () => {
-    setSelectedOption(value);
-    setIsOpen(false);
-    getCity(value);
+  const handleSearchChange = (e) => {
+    setBusqueda(e.target.value);
+    enviarDato(filteredItems);
   };
 
   useEffect(() => {
-    fetch(`${baseUrl.url}/cities`)
+    fetch(`${baseUrl.url}/products`)
       .then((res) => res.json())
       .then((data) => {
-        setCities(data);
+        setProd(data);
       });
-  }, []);
 
-  let selectText = selectedOption
-    ? `${selectedOption.name}, ${selectedOption.fuel.name}`
-    : '¿A dónde vamos?';
+    const filtered = prod.filter((item) => {
+      return (
+        item.address.toLowerCase().includes(busqueda.toLowerCase()) ||
+        item.description.toLowerCase().includes(busqueda.toLowerCase()) ||
+        item.name.toString().toLowerCase().includes(busqueda.toLowerCase())
+      );
+    });
+    setFilteredItems(filtered);
+  }, [busqueda, prod]);
 
   return (
-    <div ref={ref} className={style.selectBox}>
-      {/* select */}
-      <div className={style.dropDownHeader} onClick={toggling}>
-        {/* selectContent*/}
+    <div className={style.selectBox}>
+      <div className={style.dropDownHeader}>
         <div className={style.selectContent}>
-          <FontAwesomeIcon icon={faLocationDot} />
-          <p
-            className={
-              selectedOption ? style.description : style.initialDescription
-            }
-          >
-            {selectText}
-          </p>
+          <FontAwesomeIcon icon={faCar} />
+          <input
+            type="text"
+            value={busqueda}
+            onChange={handleSearchChange}
+            placeholder="Buscar por marca, modelo, año, tipo y mucho más!"
+            className={style.inputSearch}
+          />
         </div>
       </div>
-      {isOpen && (
-        <ul className={style.dropDownList}>
-          {/* options*/}
-          {cities.map((option) => (
-            <li
-              className={style.optionContent}
-              onClick={onOptionClicked(option)}
-              key={option.id}
-            >
-              {/* option */}
-              <FontAwesomeIcon icon={faLocationDot} />
-              <div>
-                <h2 className={style.title}>{option.name}</h2>
-                <p className={style.description}>{option.fuel.name}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   );
 };

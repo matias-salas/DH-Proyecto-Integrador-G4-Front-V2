@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import ProductList from '../ProductList/ProductList';
-import style from './ProductListContainer.module.css';
-import baseUrl from '../../utils/baseUrl.json';
+import React, { useEffect, useState } from "react";
+import ProductList from "../ProductList/ProductList";
+import style from "./ProductListContainer.module.css";
+import baseUrl from "../../utils/baseUrl.json";
 
 const ProductListContainer = ({
+  filteredItems,
   searchCity,
   searchRangeDates,
   filterCategories,
 }) => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  console.log(filteredItems);
 
   const startDate =
     searchRangeDates[0] &&
