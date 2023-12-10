@@ -75,7 +75,7 @@
   }
 }
 
-@media (min-width: 1333px) {
+@media (min-width: 1080px) {
   .categoriesContainer {
     padding: 17px 12px 20px;
   }
@@ -85,11 +85,19 @@
     width: 100%;
     gap: 14px;
     flex-wrap: unset;
+    justify-content: center;
   }
   .categoryCard {
     max-width: 310px;
   }
   .containerDescription {
     padding: 6px 14px;
+  }
+}
+
+@media (max-width: 1850px) {
+  .categoriesList {
+    flex-wrap: wrap;
+    justify-content: center;
   }
 }

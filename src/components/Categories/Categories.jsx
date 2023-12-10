@@ -37,9 +37,10 @@ const Categories = ({ handleFilterCategories }) => {
   }, []);
 
   return (
-    <div>
+    <>
       {isMobile ? (
         <MobileCategories
+          style={style}
           theme={theme}
           isLoading={isLoading}
           categories={categories}
@@ -47,12 +48,13 @@ const Categories = ({ handleFilterCategories }) => {
         />
       ) : (
         <DesktopCategories
+          style={style}
           isLoading={isLoading}
           categories={categories}
           handleFilterCategories={handleFilterCategories}
         />
       )}
-    </div>
+    </>
   );
 };
 
@@ -60,7 +62,7 @@ const MobileCategories = ({
   isLoading,
   categories,
   handleFilterCategories,
-  theme
+  theme,
 }) => {
   // MATERIAL UI
   const [activeStep, setActiveStep] = React.useState(0);
@@ -175,6 +177,7 @@ const DesktopCategories = ({
   isLoading,
   categories,
   handleFilterCategories,
+  style,
 }) => {
   return (
     <div className={style.categoriesContainer}>
