@@ -79,7 +79,7 @@ const MobileCategories = ({
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
-
+  
   return (
     <div className={style.categoriesContainer}>
       <h2>Buscar por tipo de vehículo</h2>
@@ -98,12 +98,13 @@ const MobileCategories = ({
                   sx={{
                     display: "flex",
                     alignItems: "center",
-                    height: 50,
+                    justifyContent: "center",
+                    height: 10,
                     pl: 2,
                     bgcolor: "background.default",
                   }}
                 >
-                  <Typography>{categories[activeStep].name}</Typography>
+                  <Typography sx={{ fontSize: '18px'}}>{categories[activeStep].name}</Typography>
                 </Paper>
                 <AutoPlaySwipeableViews
                   axis={theme.direction === "rtl" ? "x-reverse" : "x"}
@@ -117,11 +118,14 @@ const MobileCategories = ({
                         <Box
                           component="img"
                           sx={{
-                            height: 255,
+                            position: "relative",
+                            left: "27%",
+                            height: 109,
                             display: "block",
-                            maxWidth: 400,
+                            maxWidth: 195,
                             overflow: "hidden",
                             width: "100%",
+                            
                           }}
                           src={category.url}
                           alt={category.name}
@@ -140,6 +144,9 @@ const MobileCategories = ({
                       size="small"
                       onClick={handleNext}
                       disabled={activeStep === maxSteps - 1}
+                      sx={{
+                        color: "#876797",
+                      }}
                     >
                       Next
                       {theme.direction === "rtl" ? (
@@ -154,6 +161,9 @@ const MobileCategories = ({
                       size="small"
                       onClick={handleBack}
                       disabled={activeStep === 0}
+                      sx={{
+                        color: "#876797",
+                      }}
                     >
                       {theme.direction === "rtl" ? (
                         <KeyboardArrowRight />
@@ -163,6 +173,11 @@ const MobileCategories = ({
                       Back
                     </Button>
                   }
+                  sx={{
+                    "& .MuiMobileStepper-dotActive": {
+                      backgroundColor: "#876797",
+                    },
+                  }}
                 />
               </Box>
             }
