@@ -9,8 +9,6 @@ const Search = ({ handleSearch, handleFilterItems }) => {
   const { rangeDate } = useContext(dateRangeContext);
   const [ items, setItems ] = useState(null);
 
-  console.log(rangeDate);
-
   const obtenerDato = (dato) => {
     setItems(dato)
     
@@ -19,7 +17,7 @@ const Search = ({ handleSearch, handleFilterItems }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleSearch(transmission, rangeDate);
-    handleFilterItems(items)
+    handleFilterItems(items); // Asegurándose de que se envían los datos filtrados
   };
 
   return (

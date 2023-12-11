@@ -34,11 +34,11 @@ const Home = () => {
       />
       <Categories handleFilterCategories={handleFilterCategories} />
       <ProductListContainer
-        filteredItems={filteredItems}
-        searchCity={searchCity}
-        searchRangeDates={searchRangeDates}
-        filterCategories={categoriesFilter}
-      />
+          filteredItems={filteredItems}
+          searchCity={searchCity}
+          searchRangeDates={searchRangeDates}
+          filterCategories={categoriesFilter}
+        />
     </div>
   );
 };

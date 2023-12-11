@@ -25,7 +25,8 @@ const ProductListContainer = ({
   //console.log('Search', startDate, endDate);
 
   /* Faltaria arreglar el tema de los filtros para que se puedan reestablecer. También arreglar que si se selecciona una fecha o ciudad ya no funciona el filtro de categoria (no hay desde el back un filtro que acepte las 3 cosas) */
-
+  console.log(searchCity)
+  
   const url =
     filterCategories && !(searchCity || (startDate && endDate))
       ? `${baseUrl.url}/products/category/${filterCategories}`
@@ -37,25 +38,26 @@ const ProductListContainer = ({
       ? `${baseUrl.url}/products/dates/${startDate}/${endDate}`
       : `${baseUrl.url}/products`;
 
-  useEffect(() => {
-    setIsLoading(true);
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        // if (url.includes('/transmission')) {
-        //   setProducts([]);
-        //   throw new Error('No hay productos disponibles en esa ciudad');
-        // }
-        setProducts([]);
-        setIsLoading(false);
-        console.log(err);
-      });
-  }, [url]);
-
+      useEffect(() => {
+        if (Object.keys(filteredItems).length === 0) {
+          setIsLoading(true);
+          fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+              setProducts(data);
+              setIsLoading(false);
+            })
+            .catch((err) => {
+              setProducts([]);
+              setIsLoading(false);
+              console.log(err);
+            });
+        } else {
+          setProducts(filteredItems);
+        }
+      }, [url, filteredItems]);
+      
+      
   return (
     <div className={style.container}>
       <ProductList products={products} isLoading={isLoading} />

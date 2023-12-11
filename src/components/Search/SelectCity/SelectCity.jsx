@@ -7,12 +7,26 @@ import baseUrl from "../../../utils/baseUrl.json";
 const SelectCity = ({ enviarDato }) => {
   const [prod, setProd] = useState([]);
   const [busqueda, setBusqueda] = useState("");
-  const [filteredItems, setFilteredItems] = useState([]);
 
   const handleSearchChange = (e) => {
-    setBusqueda(e.target.value);
-    enviarDato(filteredItems);
+    const valorBusqueda = e.target.value;
+    setBusqueda(valorBusqueda);
+  
+    const filtered = prod.filter((item) =>
+      item.address.toLowerCase().includes(valorBusqueda.toLowerCase()) ||
+      item.description.toLowerCase().includes(valorBusqueda.toLowerCase()) ||
+      item.name.toString().toLowerCase().includes(valorBusqueda.toLowerCase())
+    );
+    
+    console.log(filtered)
+    
+    if (filtered.length > 0) {
+      enviarDato(filtered); // Enviar datos filtrados si hay coincidencias
+    } else {
+      enviarDato([]); // Enviar un arreglo vacío si no hay coincidencias
+    }
   };
+  
 
   useEffect(() => {
     fetch(`${baseUrl.url}/products`)
@@ -20,16 +34,7 @@ const SelectCity = ({ enviarDato }) => {
       .then((data) => {
         setProd(data);
       });
-
-    const filtered = prod.filter((item) => {
-      return (
-        item.address.toLowerCase().includes(busqueda.toLowerCase()) ||
-        item.description.toLowerCase().includes(busqueda.toLowerCase()) ||
-        item.name.toString().toLowerCase().includes(busqueda.toLowerCase())
-      );
-    });
-    setFilteredItems(filtered);
-  }, [busqueda, prod]);
+  }, []);
 
   return (
     <div className={style.selectBox}>
