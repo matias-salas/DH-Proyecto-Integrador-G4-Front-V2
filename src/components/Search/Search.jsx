@@ -1,18 +1,17 @@
-import React, { useContext, useState } from 'react';
-import style from './Search.module.css';
-import Calendar from './Calendar/Calendar';
-import SelectCity from './SelectCity/SelectCity';
-import { dateRangeContext } from '../../context/DateRangeContext';
+import React, { useContext, useState } from "react";
+import style from "./Search.module.css";
+import Calendar from "./Calendar/Calendar";
+import SelectCity from "./SelectCity/SelectCity";
+import { dateRangeContext } from "../../context/DateRangeContext";
 
 const Search = ({ handleSearch, handleFilterItems }) => {
   const [transmission] = useState(null);
   const { rangeDate } = useContext(dateRangeContext);
-  const [ items, setItems ] = useState(null);
+  const [items, setItems] = useState(null);
 
-  const obtenerDato = (dato) => {
-    setItems(dato)
-    
-  }
+  const obtenerDato = (items) => {
+    setItems(items);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,7 +25,7 @@ const Search = ({ handleSearch, handleFilterItems }) => {
         Buscá el mejor transporte para tu viaje...
       </h1>
       <form className={style.searchForm} onSubmit={handleSubmit}>
-        <SelectCity enviarDato={obtenerDato}/>
+        <SelectCity enviarDato={obtenerDato} />
         <Calendar />
         <button className={`btn btn2 ${style.searchBtn}`}>Buscar</button>
       </form>

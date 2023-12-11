@@ -11,22 +11,22 @@ const SelectCity = ({ enviarDato }) => {
   const handleSearchChange = (e) => {
     const valorBusqueda = e.target.value;
     setBusqueda(valorBusqueda);
-  
-    const filtered = prod.filter((item) =>
-      item.address.toLowerCase().includes(valorBusqueda.toLowerCase()) ||
-      item.description.toLowerCase().includes(valorBusqueda.toLowerCase()) ||
-      item.name.toString().toLowerCase().includes(valorBusqueda.toLowerCase())
+
+    const filtered = prod.filter(
+      (item) =>
+        item.address.toLowerCase().includes(valorBusqueda.toLowerCase()) ||
+        item.description.toLowerCase().includes(valorBusqueda.toLowerCase()) ||
+        item.name.toString().toLowerCase().includes(valorBusqueda.toLowerCase())
     );
-    
-    console.log(filtered)
-    
+
+    console.log(filtered);
+
     if (filtered.length > 0) {
       enviarDato(filtered); // Enviar datos filtrados si hay coincidencias
     } else {
-      enviarDato([]); // Enviar un arreglo vacío si no hay coincidencias
+      enviarDato("zap"); // Enviar un arreglo vacío si no hay coincidencias
     }
   };
-  
 
   useEffect(() => {
     fetch(`${baseUrl.url}/products`)
