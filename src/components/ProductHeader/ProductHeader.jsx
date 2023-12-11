@@ -29,10 +29,10 @@ const ProductHeader = () => {
   return (
     <section className={style.header}>
       <div className={style.headerLeft}>
-        <h4 className={style.productCategory}>
-          {productDataHeader.category.name}
-        </h4>
-        <h1>{productDataHeader.name}</h1>
+        {/* <h4 className={style.productCategory}>
+          {productDataHeader.transmission.name}
+        </h4> */}
+        <h1>{productDataHeader.address}</h1>
       </div>
       <div className={style.headerRight}>
         <Link to={backUrl}>

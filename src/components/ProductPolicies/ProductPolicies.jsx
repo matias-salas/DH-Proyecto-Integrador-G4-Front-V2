@@ -8,7 +8,7 @@ const ProductPolicies = ({ policies }) => {
       <hr className={style.line} />
       <div className={style.policiesList}>
         <div className={style.policie}>
-          <h3>Normas del establecimiento</h3>
+          <h3>Normas del vehiculo</h3>
           <ul>
             {policies?.policiesSite?.split('. ' || '\n').map((policie, i) => (
               <li key={i}>{policie}</li>

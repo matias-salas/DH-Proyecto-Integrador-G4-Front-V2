@@ -112,16 +112,16 @@ const BookingDetail = ({ checkInTime }) => {
             <div className={style.cardDetailRigth}>
               {/* title and category */}
               <div className={style.categoryTitleContainer}>
-                <p className={style.productCategory}>{product.category.name}</p>
+                <p className={style.fullAddress}>{product.address}</p>
                 {/* <FontAwesomeIcon className={style.productStars} icon={faStar} /> */}
-                <h3 className={style.productTitle}>{product.name}</h3>
-                <FontAwesomeIcon className={style.productStars} icon={faStar} />
+                <h3 className={style.productTitle}>$ {product.name}</h3>
+                {/* <FontAwesomeIcon className={style.productStars} icon={faStar} /> */}
               </div>
               {/* Address, transmission, fuel*/}
-              <div className={style.fullAddress}>
-                <FontAwesomeIcon icon={faLocationDot} />
+              <div className={style.productCategory}>
+                {/* <FontAwesomeIcon icon={faLocationDot} /> */}
                 <p>
-                  {product.address}, {product.transmission.name},{' '}
+                  {product.category.name}, {product.transmission.name},{' '}
                   {product.transmission.fuel.name}
                 </p>
               </div>
@@ -129,12 +129,12 @@ const BookingDetail = ({ checkInTime }) => {
               <div className={style.containerCheck}>
                 <div className={style.lineBooking}></div>
                 <div className={style.checkDate}>
-                  <p>Check in</p>
+                  <p>Retiro</p>
                   <p>{startDate}</p>
                 </div>
                 <div className={style.lineBooking}></div>
                 <div className={style.checkDate}>
-                  <p>Check out</p>
+                  <p>Entrega</p>
                   <p>{endDate}</p>
                 </div>
                 <div className={style.lineBooking}></div>

@@ -87,7 +87,7 @@ const ProductDetail = ({
             <Calendar inline={true} />
           </div>
           <div className={style.reserveContainer}>
-            <p>Agregá tus fechas de viaje para obtener precios exactos</p>
+            {/* <p>Agregá tus fechas de viaje para obtener precios exactos</p> */}
             {/*provisorio, realizar bien la validacion y redireccion */}
             <button
               className="btn btn2 w-100"
