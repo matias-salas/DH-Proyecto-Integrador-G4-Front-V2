@@ -93,7 +93,7 @@ const AddAttribute = ({ getAttributes }) => {
             changeState={setAttributeName}
             label="Nombre"
             type="text"
-            placeholder="Wifi"
+            placeholder="Aire Acondicionado"
             error={msgError}
           />
           <Input
@@ -101,7 +101,7 @@ const AddAttribute = ({ getAttributes }) => {
             changeState={setAttributeIcon}
             label="Ícono"
             type="text"
-            placeholder="fa-wifi"
+            placeholder="fa-AC"
             error={msgError}
           />
         </div>

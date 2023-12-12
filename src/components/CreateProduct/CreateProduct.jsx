@@ -276,21 +276,21 @@ const CreateProduct = () => {
 
   return (
     <div className={style.container}>
-      <h2>Crear propiedad</h2>
+      <h2>Añadir vehículo</h2>
       <form className={style.formProduct} onSubmit={handleSubmit}>
         <section className={style.initialDataProperty}>
           <div className={style.doubleProperty}>
             <Input
               state={propertyName}
               changeState={setPropertyName}
-              label="Nombre de la propiedad"
+              label="Valor del vehículo"
               id="propertyName"
               name="propertyName"
-              placeholder="Texto"
+              placeholder="Precio"
             />
             <SelectCategory
               arrayDataOptions={arrayDataCategories}
-              placeholder={'Categoría'}
+              placeholder={'Seleccionar categoría'}
               label={'Categoría'}
               name={'propertyCategory'}
               isLocationIcon={false}
@@ -302,15 +302,15 @@ const CreateProduct = () => {
             <Input
               state={address}
               changeState={setAddress}
-              label="Dirección"
+              label="Nombre del vehículo"
               id="address"
               name="address"
-              placeholder="Texto"
+              placeholder="Nombre"
             />
             <SelectCity2
               arrayDataOptions={arrayDataCities}
-              placeholder={'Ciudad'}
-              label={'Ciudad'}
+              placeholder={'Seleccionar tipo'}
+              label={'Tipo de motor'}
               name={'propertyCity'}
               isLocationIcon={false}
               isOptionTextInTwoLines={false}
@@ -321,7 +321,7 @@ const CreateProduct = () => {
             state={description}
             label={'Descripción'}
             changeState={setDescription}
-            placeholder={'Escriba aquí'}
+            placeholder={'Escriba aquí la descripción del vehículo'}
             name={'descriptionProperty'}
           />
         </section>
@@ -334,17 +334,17 @@ const CreateProduct = () => {
           <h2>Políticas del producto</h2>
           <div className={style.subContainerPolicies}>
             <AddPolicy
-              titlePolicy={'Normas del establecimiento'}
+              titlePolicy={'Detalles estéticos/mecánicos'}
               getValuePolicy={setSitePolicy}
               name={'sitePolicy'}
             />
             <AddPolicy
-              titlePolicy={'Salud y seguridad'}
+              titlePolicy={'Seguridad'}
               getValuePolicy={setHealtAndSafetyPolicy}
               name={'healthAndSafetyPolicy'}
             />
             <AddPolicy
-              titlePolicy={'Política de cancelación'}
+              titlePolicy={'Póliza de seguro'}
               getValuePolicy={setCancellationPolicy}
               name={'cancellationPolicy'}
             />

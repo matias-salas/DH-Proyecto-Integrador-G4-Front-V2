@@ -1,11 +1,12 @@
 .cardContainer {
   background-color: var(--white-color);
   width: 100%;
-  max-width: 394px;
+  max-width: 294px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 0px 0px 8px 8px;
+  border-radius: 8px 8px 8px 8px;
   /* height: 491px; ver */
   margin: auto;
+  
 }
 
 
@@ -21,6 +22,14 @@
   height: 231px; /* ver */
   object-fit: cover;
   user-select: none;
+}
+
+.productImageNot {
+  width: 240px;
+  height: 240px; 
+  object-fit: cover;
+  user-select: none;
+  margin: 10px 0 0 20px;
 }
 
 .productFavorite {
@@ -129,7 +138,9 @@
 }
 
 .propertyHighlights {
-  display: none;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 20px;
 }
 
 .productDescription {
@@ -157,7 +168,9 @@
     gap: 21px;
   }
   .productImageContainer {
-    flex: 1 1;
+    flex: flex;
+    width: auto;
+    align-items: center;
   }
   .productImage {
     border-bottom-left-radius: 0;
@@ -165,6 +178,7 @@
     height: 100%;
     object-fit: cover;
   }
+
 
   .propertyHighlights {
     display: block;

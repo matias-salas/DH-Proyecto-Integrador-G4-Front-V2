@@ -5,7 +5,7 @@ const ProductNotFound = () => {
     <div className={style.cardContainer}>
       <div className={style.productImageContainer}>
         <img
-          className={style.productImage}
+          className={style.productImageNot}
           src="https://images.kavak.services/ar/assets/images/catalogue/svg/search-results-all.svg"
           alt="not found"
         />

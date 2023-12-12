@@ -23,7 +23,7 @@ const ProductListContainer = ({
     searchRangeDates[1] &&
     new Date(searchRangeDates[1]).toISOString().slice(0, 10);
 
-  //console.log('Search', startDate, endDate);
+  // console.log('Search', startDate, endDate);
 
   /* Faltaria arreglar el tema de los filtros para que se puedan reestablecer. También arreglar que si se selecciona una fecha o ciudad ya no funciona el filtro de categoria (no hay desde el back un filtro que acepte las 3 cosas) */
   console.log(searchCity);
