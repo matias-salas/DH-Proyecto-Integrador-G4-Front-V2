@@ -14,6 +14,9 @@ import BookingSucces from './components/BookingSuccess/BookingSucces';
 import NotFound from './pages/NotFound/NotFound';
 import Administration from './pages/Administration/Administration';
 import NewProductSuccessful from './components/NewProductSuccessful/NewProductSuccessful';
+import EditProduct from './components/EditProduct/EditProduct';
+
+import AdministrationCreate from './pages/AdministrationCreate/AdministrationCreate';
 
 function App() {
   return (
@@ -33,9 +36,18 @@ function App() {
                 path="/products/:id"
                 element={<ProductDetailCointaner />}
               />
+
+              <Route
+                path="/edit-product/:id"
+                element={<EditProduct />}
+              />
+
               <Route path="/product/:id/booking" element={<ProductBooking />} />
               <Route path="/booking/success" element={<BookingSucces />} />
               <Route path="/administration" element={<Administration />} />
+
+              <Route path="/create-product" element={<AdministrationCreate />} />
+
               <Route
                 path="/successful-new-product"
                 element={<NewProductSuccessful />}

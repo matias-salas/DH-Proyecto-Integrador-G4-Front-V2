@@ -24,6 +24,7 @@
     "react-scripts": "5.0.1",
     "react-swipeable-views": "^0.14.0",
     "styled-components": "^6.1.1",
+    "sweetalert2": "^11.10.1",
     "viject": "^1.2.1",
     "web-vitals": "^2.1.4"
   },

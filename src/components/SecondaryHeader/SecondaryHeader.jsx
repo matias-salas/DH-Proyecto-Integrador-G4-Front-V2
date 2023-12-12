@@ -10,11 +10,21 @@ const SecondaryHeader = () => {
       <div className={style.headerLeft}>
         <h1>Administración</h1>
       </div>
+
+
+      <div >
+        <Link to="/create-product" >
+          <span className={style.btn2}>Crear Producto</span>
+        </Link>
+      </div>
+
       <div className={style.headerRight}>
         <Link to="/">
           <FontAwesomeIcon icon={faChevronLeft} />
         </Link>
       </div>
+
+
     </section>
   );
 };

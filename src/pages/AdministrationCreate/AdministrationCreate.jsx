@@ -1,22 +1,22 @@
 import React from 'react';
 import CreateProduct from '../../components/CreateProduct/CreateProduct';
 import SecondaryHeader from '../../components/SecondaryHeader/SecondaryHeader';
-import style from './Administration.module.css';
+import style from './AdministrationCreate.module.css';
 
 
 import AdminListProducts from '../../components/AdminListProducts/AdminListProducts';
 
 
-const Administration = () => {
+const AdministrationCreate = () => {
   return (
     <div className={style.container}>
       <SecondaryHeader />
-      {/* <CreateProduct /> */}
+      <CreateProduct />
       
-      <AdminListProducts />
+      {/* <AdminListProducts /> */}
 
     </div>
   );
 };
 
-export default Administration;
+export default AdministrationCreate;

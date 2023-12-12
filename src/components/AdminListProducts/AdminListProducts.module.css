@@ -1,0 +1,72 @@
+/* ProductList.module.css */
+
+.productListContainer {
+    background-color: var(--white-color);
+    padding-bottom: 53px; /* Momentaneo revisar */
+    border: 1px solid #dfe4ea;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding-top: 24px;
+    border-radius: 8px;
+    padding: 33px 15px 53px;
+  }
+  
+  .productListTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .productListTable th,
+  .productListTable td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #dfe4ea;
+  }
+  
+  .productListTable th {
+    background-color: #f8f9fa;
+    font-weight: 700;
+  }
+  
+  .editButton,
+  .deleteButton {
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    color: var(--white-color);
+    transition: background-color 0.3s ease;
+  }
+  
+  .editButton {
+    background-color: var(--primary-color);
+  }
+  
+  .editButton:hover {
+    background-color: var(--primary-color-hover);
+  }
+  
+  .deleteButton {
+    background-color: var(--secondary-color);
+  }
+  
+  .deleteButton:hover {
+    background-color: var(--thirth-color);
+  }
+  
+
+  .container {
+    padding: 0 40px 100px;
+  }
+  
+  .container > h2 {
+    padding: 25px 9px 17px;
+  }
+
+.cargandoProductos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}

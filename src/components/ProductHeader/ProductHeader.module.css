@@ -40,3 +40,45 @@
     font-size: 31px;
   }
 }
+
+
+.btn1 {
+  background-color: var(--white-color);
+  color: var(--primary-color);
+  border: none;
+  height: 40px;
+  width: 206px;
+  transition: 0.4s ease-in-out;
+  padding: 11px;
+  box-shadow: 0px 1px 5px rgb(0 0 0 / 15%);
+}
+
+.btn2 {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  height: 40px;
+  width: 206px;
+  transition: 0.4s ease-in-out;
+  padding: 11px;
+  box-shadow: 0px 1px 5px rgb(0 0 0 / 15%);
+  border-radius: 5px;
+}
+
+.btn1:hover {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.btn1:disabled:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.btn2:hover {
+  background-color: #46354e;
+}
+
+.btn2:disabled:hover {
+  background-color: var(--primary-color);
+}
