@@ -87,9 +87,17 @@ const SideBar = () => {
                 className={style.signOff}
                 onClick={() => userContextResult.logoutUser()}
               >
-                cerrar sesión
+                Cerrar sesión
               </Link>
               ?
+            </p>
+
+            <p>
+              <Link
+                className={style.signOff}
+              >
+                Mis Reservas
+              </Link>
             </p>
             <span className={style.lineOrange}></span>
           </>

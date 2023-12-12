@@ -1,1 +1,2 @@
-{ "url": "http://localhost:8000" }
+
+{ "url": "http://ec2-3-142-200-91.us-east-2.compute.amazonaws.com:8080" }

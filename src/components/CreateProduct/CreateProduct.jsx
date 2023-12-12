@@ -96,7 +96,7 @@ const CreateProduct = () => {
 
   /* Data cities */
   useEffect(() => {
-    fetch(`${baseUrl.url}/cities`)
+    fetch(`${baseUrl.url}/transmission`)
       .then((res) => res.json())
       .then((data) => {
         setArrayDataCities(data);

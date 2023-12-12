@@ -16,6 +16,14 @@
   z-index: 999;
 }
 
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  bottom: 0;
+  gap: 1rem;
+}
+
 .btn .btn1{
   border: none !important;
   background-color: transparent !important;

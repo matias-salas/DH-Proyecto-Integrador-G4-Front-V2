@@ -15,6 +15,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Administration from './pages/Administration/Administration';
 import NewProductSuccessful from './components/NewProductSuccessful/NewProductSuccessful';
 import EditProduct from './components/EditProduct/EditProduct';
+import ReservationList from './components/ReservationList/ReservationList';
 
 import AdministrationCreate from './pages/AdministrationCreate/AdministrationCreate';
 
@@ -47,6 +48,8 @@ function App() {
               <Route path="/administration" element={<Administration />} />
 
               <Route path="/create-product" element={<AdministrationCreate />} />
+
+              <Route path="/my-booking" element={<ReservationList />} />
 
               <Route
                 path="/successful-new-product"

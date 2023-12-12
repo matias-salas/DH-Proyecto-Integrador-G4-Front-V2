@@ -54,17 +54,34 @@ const Menu = () => {
             <>
               
               <Avatar />
-              <button
-                className={`btn btn2`}
-                onClick={() => {
-                  userContextResult.logoutUser();
-                  navigate('/');
-                }}
-                aria-label="Cerrar sesión"
-              >
-              Cerrar Sesión
+
+              <div className={style.buttons}>
+
+                <button
+                  className={`btn btn1`}
+                  onClick={() => {
+                    navigate('/my-booking');
+                  }}
+                  aria-label="Mis Reservas"
+                >
+                  Mis Reservas
                 {/* <FontAwesomeIcon icon={faXmark} /> */}
-              </button>
+                </button>
+                <button
+                  className={`btn btn2`}
+                  onClick={() => {
+                    userContextResult.logoutUser();
+                    navigate('/');
+                  }}
+                  aria-label="Cerrar sesión"
+                >
+                Cerrar Sesión
+                  {/* <FontAwesomeIcon icon={faXmark} /> */}
+                </button>
+
+
+              </div>
+
             </>
           )}
         </div>
