@@ -33,7 +33,6 @@ const ProductListContainer = ({
       ? `${baseUrl.url}/products/dates/${startDate}/${endDate}`
       : `${baseUrl.url}/products`;
 
-
   useEffect(() => {
     setIsLoading(true);
     fetch(url)
