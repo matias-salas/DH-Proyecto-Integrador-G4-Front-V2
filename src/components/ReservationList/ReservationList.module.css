@@ -39,3 +39,25 @@
     font-size: 16px;
   }
   
+  .reservationTable button {
+    margin-right: 8px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .reservationTable button:hover {
+    opacity: 0.8;
+  }
+  
+  .viewButton {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .deleteButton {
+    background-color: #f44336;
+    color: white;
+  }

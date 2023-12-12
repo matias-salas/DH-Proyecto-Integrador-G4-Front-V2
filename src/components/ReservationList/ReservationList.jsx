@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './ReservationList.module.css'; // Asegúrate de ajustar la ruta del import
 import baseUrl from '../../utils/baseUrl.json';
 import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ReservationList = () => {
     const [reservations, setReservations] = useState([]);
@@ -10,6 +11,43 @@ const ReservationList = () => {
 
     const handleProductClick = (productId) => {
         navigate(`/products/${productId}`);
+    };
+
+
+    const handleDelete = (reservationId) => {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "No podrás revertir esta acción.",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, eliminarla!',
+            cancelButtonText: 'Cancelar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`${baseUrl.url}/reservations/delete/${reservationId}`, {
+                    method: 'DELETE',
+                    // Agrega aquí los headers necesarios, como tokens de autenticación
+                })
+                .then(() => {
+                    setReservations(reservations.filter(reservation => reservation.id !== reservationId));
+                    Swal.fire(
+                        'Eliminada!',
+                        'La reserva ha sido eliminada.',
+                        'success'
+                    );
+                })
+                .catch((error) => {
+                    console.error('Error al eliminar la reserva:', error);
+                    Swal.fire(
+                        'Error!',
+                        'Hubo un problema al eliminar la reserva.',
+                        'error'
+                    );
+                });
+            }
+        });
     };
 
     useEffect(() => {
@@ -47,6 +85,8 @@ const ReservationList = () => {
                         <th>Check-out</th>
                         
                         <th>Comentarios</th>
+                        <th>Herramientas</th>
+
                         {/* Agrega más encabezados según necesites */}
                     </tr>
                 </thead>
@@ -63,6 +103,21 @@ const ReservationList = () => {
                             <td>{new Date(...reservation.check_in_date).toLocaleDateString()}</td>
                             <td>{new Date(...reservation.checkout_date).toLocaleDateString()}</td>
                             <td>{reservation.comments}</td>
+
+                            <td>
+                            <button
+                                onClick={() => handleProductClick(reservation.product.id)}
+                                className={styles.viewButton}
+                            >
+                                Ver Producto
+                            </button>
+                            <button
+                                onClick={() => handleDelete(reservation.id)}
+                                className={styles.deleteButton}
+                            >
+                                Eliminar
+                            </button>
+                            </td>
                             {/* Agrega más celdas según necesites */}
                         </tr>
                     ))}
