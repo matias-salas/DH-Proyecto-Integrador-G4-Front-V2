@@ -8,6 +8,8 @@
   margin: auto;
 }
 
+
+
 .productImageContainer {
   position: relative;
 }
@@ -39,6 +41,17 @@
   font-size: 14px;
   font-weight: 500;
   justify-content: space-between;
+}
+
+.cardDetailsNot {
+  color: var(--thirth-color);
+  display: flex;
+  flex-direction: column;
+  /* gap: 19px; */
+  padding: 20px 10px 13px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  justify-content: space-evenly;
 }
 
 .row1 {

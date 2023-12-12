@@ -10,7 +10,7 @@ const ProductNotFound = () => {
           alt="not found"
         />
       </div>
-      <div className={style.cardDetails}>
+      <div className={style.cardDetailsNot}>
         <p className={style.propertyHighlights}>
           No encontramos resultados para tu búsqueda.
         </p>
