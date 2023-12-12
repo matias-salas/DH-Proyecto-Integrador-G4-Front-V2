@@ -95,6 +95,7 @@ const SideBar = () => {
             <p>
               <Link
                 className={style.signOff}
+                to='/my-booking'
               >
                 Mis Reservas
               </Link>
