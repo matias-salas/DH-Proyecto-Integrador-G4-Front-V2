@@ -25,7 +25,7 @@ const ProductListContainer = ({
   console.log(filteredItems);
 
   const url =
-    filterCategories && !(filteredItems || (startDate && endDate))
+    filterCategories && !(searchCity || (startDate && endDate))
       ? `${baseUrl.url}/products/category/${filterCategories}`
       : filteredItems && startDate && endDate
       ? `${baseUrl.url}/products/searchProducts/${filteredItems}/${startDate}/${endDate}`

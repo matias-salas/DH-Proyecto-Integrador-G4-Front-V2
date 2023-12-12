@@ -35,7 +35,7 @@ const BookingCheckIn = ({ getCheckInTime }) => {
       <div className={style.checkInText}>
         <FontAwesomeIcon icon={faCircleCheck} />
         <p>
-          Tu auto va a estar listo para el check-in entre las{' '}
+          Tu auto va a estar listo para el retiro entre las{' '}
           {rangeInitialTime}{' '}
           {Number(rangeInitialTime.slice(0, 2)) < 12 ? 'AM' : 'PM'} y las{' '}
           {rangeFinishTime}{' '}

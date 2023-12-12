@@ -10,6 +10,7 @@ const Home = () => {
   const [categoriesFilter, setCategoriesFilter] = useState(null);
   const [filteredItems, setFilteredItems] = useState({});
 
+
   const handleSearch = (citySearch, dateRange) => {
     setSearchCity(citySearch);
     setSearchRangeDates(dateRange);
@@ -17,6 +18,8 @@ const Home = () => {
 
   //console.log('id category', categoriesFilter);
 
+  console.log(searchCity);
+  
   const handleFilterCategories = (category) => {
     setCategoriesFilter(category);
   };

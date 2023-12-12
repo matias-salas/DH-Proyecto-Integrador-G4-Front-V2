@@ -5,7 +5,7 @@ import style from "./SelectCity.module.css";
 
 const SelectCity = ({ enviarDato }) => {
   // const [prod, setProd] = useState([]);
-  const [busqueda, setBusqueda] = useState("");
+  const [busqueda, setBusqueda] = useState(null);
 
   const handleSearchChange = (e) => {
     const valorBusqueda = e.target.value;
@@ -25,7 +25,7 @@ const SelectCity = ({ enviarDato }) => {
     //   } else {
     //     enviarDato("zap"); // Enviar un arreglo vacío si no hay coincidencias
   };
-enviarDato(busqueda);
+  enviarDato(busqueda);
   // };
 
   // useEffect(() => {
