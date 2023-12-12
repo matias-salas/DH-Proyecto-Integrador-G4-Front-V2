@@ -22,16 +22,45 @@ const ProductListContainer = ({
   /* Faltaria arreglar el tema de los filtros para que se puedan reestablecer. También arreglar que si se selecciona una fecha o ciudad ya no funciona el filtro de categoria (no hay desde el back un filtro que acepte las 3 cosas) */
   console.log(filterCategories);
 
-  const url =
-    filterCategories && !(searchCity || (startDate && endDate))
-      ? `${baseUrl.url}/products/category/${filterCategories}`
-      : searchCity && startDate && endDate
-      ? `${baseUrl.url}/products/searchProducts/${searchCity}/${startDate}/${endDate}`
-      : searchCity && !(startDate && endDate)
-      ? `${baseUrl.url}/products/searchProducts/${searchCity}`
-      : startDate && endDate
-      ? `${baseUrl.url}/products/dates/${startDate}/${endDate}`
-      : `${baseUrl.url}/products`;
+  // const url =
+  //   filterCategories && !(searchCity || (startDate && endDate))
+  //     ? `${baseUrl.url}/products/category/${filterCategories}`
+  //     : searchCity && startDate && endDate
+  //     ? `${baseUrl.url}/products/searchProducts/${searchCity}/${startDate}/${endDate}`
+  //     : searchCity && !(startDate && endDate)
+  //     ? `${baseUrl.url}/products/searchProducts/${searchCity}`
+  //     : startDate && endDate
+  //     ? `${baseUrl.url}/products/dates/${startDate}/${endDate}`
+  //     : `${baseUrl.url}/products`;
+
+  // const url = filterCategories && !(searchCity || (startDate && endDate))
+  //   ? `${baseUrl.url}/products/category/${filterCategories}`
+  //   : filterCategories && searchCity // Nuevo caso para filtrar por Category y Keyword
+  //   ? `${baseUrl.url}/products/searchByCategoryAndKeyword/${filterCategories}/${searchCity}`
+  //   : searchCity && startDate && endDate
+  //   ? `${baseUrl.url}/products/searchProducts/${searchCity}/${startDate}/${endDate}`
+  //   : searchCity && !(startDate && endDate)
+  //   ? `${baseUrl.url}/products/searchProducts/${searchCity}`
+  //   : startDate && endDate
+  //   ? `${baseUrl.url}/products/dates/${startDate}/${endDate}`
+  //   : `${baseUrl.url}/products`;
+
+  const url = filterCategories && startDate && endDate && !searchCity
+    ? `${baseUrl.url}/products/searchByCategoryAndDateRange/${filterCategories}/${startDate}/${endDate}`
+    : filterCategories && searchCity && startDate && endDate
+    ? `${baseUrl.url}/products/searchByCategoryKeywordAndDateRange/${filterCategories}/${searchCity}/${startDate}/${endDate}`
+    : filterCategories && !(searchCity || (startDate && endDate))
+    ? `${baseUrl.url}/products/category/${filterCategories}`
+    : filterCategories && searchCity // Nuevo caso para filtrar por Category y Keyword
+    ? `${baseUrl.url}/products/searchByCategoryAndKeyword/${filterCategories}/${searchCity}`
+    : searchCity && startDate && endDate
+    ? `${baseUrl.url}/products/searchProducts/${searchCity}/${startDate}/${endDate}`
+    : searchCity && !(startDate && endDate)
+    ? `${baseUrl.url}/products/searchProducts/${searchCity}`
+    : startDate && endDate
+    ? `${baseUrl.url}/products/dates/${startDate}/${endDate}`
+    : `${baseUrl.url}/products`;
+
 
   useEffect(() => {
     setIsLoading(true);
