@@ -4,8 +4,7 @@ import Calendar from "./Calendar/Calendar";
 import SelectCity from "./SelectCity/SelectCity";
 import { dateRangeContext } from "../../context/DateRangeContext";
 
-const Search = ({ handleSearch, handleFilterItems }) => {
-  const [transmission] = useState(null);
+const Search = ({ handleSearch  }) => {
   const { rangeDate } = useContext(dateRangeContext);
   const [items, setItems] = useState(null);
 
@@ -15,8 +14,7 @@ const Search = ({ handleSearch, handleFilterItems }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleSearch(transmission, rangeDate);
-    handleFilterItems(items); // Asegurándose de que se envían los datos filtrados
+    handleSearch(items, rangeDate);
   };
 
   return (
