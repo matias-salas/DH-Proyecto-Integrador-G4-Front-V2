@@ -52,17 +52,19 @@ const Menu = () => {
             </div>
           ) : (
             <>
+              
+              <Avatar />
               <button
-                className={style.closeMenu}
+                className={`btn btn2`}
                 onClick={() => {
                   userContextResult.logoutUser();
                   navigate('/');
                 }}
                 aria-label="Cerrar sesión"
               >
-                <FontAwesomeIcon icon={faXmark} />
+              Cerrar Sesión
+                {/* <FontAwesomeIcon icon={faXmark} /> */}
               </button>
-              <Avatar />
             </>
           )}
         </div>

@@ -145,12 +145,15 @@
 /* Container-rigth / Buttons tablet-desktop */
 .containerRigth {
   display: none;
+  
 }
 
 @media (min-width: 768px) {
   .containerRigth {
-    display: block;
+    display: flex;
     position: relative;
+    align-items: center;
+    flex-direction: column;
   }
 
   .btnGroup {

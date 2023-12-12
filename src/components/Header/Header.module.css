@@ -32,26 +32,28 @@ header {
 }
 
 .motto {
-  display: none;
-}
-
-@media (min-width: 768px) {
-  .nav {
-    padding: 1.25rem 2rem;
-  }
-}
-
-@media (min-width: 1333px) {
-  .nav {
-    padding: 1.25rem 2.5rem;
-  }
-  .motto {
-    display: block;
+  
+  display: block;
     font-size: 20px;
     font-weight: 300;
     align-self: end;
     margin: auto;
     margin-left: 12px;
     color: var(--thirth-color);
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 1.25rem 2rem;
   }
+  .motto {
+    display: none;
+  }
+}
+
+@media (max-width: 1333px) {
+  .nav {
+    padding: 1.25rem 2.5rem;
+  }
+  
 }
